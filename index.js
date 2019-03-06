@@ -5,7 +5,30 @@ let prefix = 'cr!'
 const orders = new Discord.Collection()
 const orderStatus = new Discord.Collection()
 // const developer = 'Bot made by `RedstoneMiner27#3817` and [this is his server](https://discord.gg/9GC)'
+client.music = require("discord.js-musicbot-addon");
 
+client.music.start(client, {
+  youtubeKey: "AIzaSyCm3wlOQswbVH3p90l7mHct66aLZKtyj88"
+});
+
+client.music.start(client, {
+  youtubeKey: "AIzaSyCm3wlOQswbVH3p90l7mHct66aLZKtyj88",
+
+  play: {
+    usage: "{{prefix}}play some tunes",
+    exclude: false  
+  },
+
+  anyoneCanSkip: true,
+
+  ownerOverMember: true,
+  ownerID: "465883333159550980",
+
+
+  cooldown: {
+    enabled: false
+  }
+});
 client.on('message', message => {
     if (message.author.bot || !message.guild) return;
 
