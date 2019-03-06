@@ -7,7 +7,9 @@ const orderStatus = new Discord.Collection()
 // const developer = 'Bot made by `RedstoneMiner27#3817` and [this is his server](https://discord.gg/9GC)'
 const music = require('discord.js-music-v11');
 
-music(client);
+music(client, {
+ prefix: 'cr!'   
+});
 
 client.on('message', message => {
     if (message.author.bot || !message.guild) return;
