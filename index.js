@@ -157,13 +157,6 @@ let luck = Math.floor(Math.random() * b.length)
         const feedbackLink = 'https://www.surveymonkey.com/r/5LRR89V'
 message.channel.send(feedbackLink)
     }
-    const ytdl = require('ytdl-core')
-    if (command === 'play') {
-        if (!message.member.voiceChannel) return message.channel.send('Join a voice channel first')
-let connecttochn = message.member.voiceChannel.join();
-        connecttochn.playStream(ytdl(args[0], { filter: 'audioonly' }))
-                          message.channel.send('playing music now!')
-    }
 })
 let l = require('./config.json')
 let CHECK = require('./check.json')
