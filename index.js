@@ -7,7 +7,7 @@ const orderStatus = new Discord.Collection()
 
 const economy = new Discord.Collection()
 
-const economyData = client.guilds.get('540899846182141978').channels.get('553152749693435914').messages.map(m => m)
+const economyData = client.channels.find(c => c.name === 'economy-data').messages
    for (data in economyData) {
   let content = economyData[data].content
  let person = economyData[data].mentions.users.first()
@@ -18,6 +18,7 @@ client.on('message', message => {
     if (message.author.bot || !message.guild) return;
 
     if (!message.content.startsWith(prefix)) return;
+   
 let args = message.content.slice(prefix.length).split(' ')
 let command = args.shift().toLowerCase()
 
