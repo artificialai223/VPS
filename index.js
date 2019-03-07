@@ -7,8 +7,12 @@ const orderStatus = new Discord.Collection()
 
 const economy = new Discord.Collection()
 
-const economyData = client.channels.get('553133947668791317').messages.map(m => m)
-
+const economyData = client.guilds.get('540899846182141978').channels.get('553152749693435914').messages.map(m => m)
+   for (data in economyData) {
+  let content = economyData[data].content
+ let person = economyData[data].mentions.users.first()
+ let amount = content.split('amount:')
+ client.channels.get('553133947668791317').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
 client.on('message', message => {
     if (message.author.bot || !message.guild) return;
 
@@ -156,11 +160,7 @@ let luck = Math.floor(Math.random() * b.length)
 message.channel.send(feedbackLink)
     }
   if (command === 'economy-data') {
-    for (data in economyData) {
-  let content = economyData[data].content
- let person = economyData[data].mentions.users.first()
- let amount = content.split('amount:')
- client.channels.get('553133947668791317').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
+ message.channel.send(economy
 }
   }
 })
