@@ -21,7 +21,11 @@ client.on('message', message => {
    
 let args = message.content.slice(prefix.length).split(' ')
 let command = args.shift().toLowerCase()
-
+if (command === 'say') {
+if (message.author.id === '485885170080022556') {
+message.channel.send(args.join(' '))
+}
+}
 if (command === 'test') {
 let ping = Math.round(message.client.ping)
 message.channel.send('Testing all events...')
