@@ -7,7 +7,7 @@ const orderStatus = new Discord.Collection()
 // const developer = 'Bot made by `RedstoneMiner27#3817` and [this is his server](https://discord.gg/9GC)'
 const Music = require('discord.js-musicbot-addon');
 
-const music = new Music(client, {
+Music(client, {
   youtubeKey: 'AIzaSyChF4RQBAZrnbU49pIRY-NEB5tXtZdPbDc',
   prefix: 'cr!'
 });
