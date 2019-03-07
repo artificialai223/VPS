@@ -12,7 +12,8 @@ const economyData = client.guilds.get('540899846182141978').channels.get('553152
   let content = economyData[data].content
  let person = economyData[data].mentions.users.first()
  let amount = content.split('amount:')
- client.channels.get('553133947668791317').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
+ client.channels.get('547751546754957312').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
+   }
 client.on('message', message => {
     if (message.author.bot || !message.guild) return;
 
@@ -159,10 +160,9 @@ let luck = Math.floor(Math.random() * b.length)
         const feedbackLink = 'https://www.surveymonkey.com/r/5LRR89V'
 message.channel.send(feedbackLink)
     }
-  if (command === 'economy-data') {
- message.channel.send(economy
+  if (command === 'balance') {
+ message.channel.send(economy.get(message.author.id))
 }
-  }
 })
 let l = require('./config.json')
 let CHECK = require('./check.json')
