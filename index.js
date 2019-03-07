@@ -7,13 +7,13 @@ const orderStatus = new Discord.Collection()
 
 const economy = new Discord.Collection()
 
-const economyData = client.channels.find(c => c.name === 'economy-data').messages
+/*const economyData = client.channels.find(c => c.name === 'economy-data').messages
    for (data in economyData) {
   let content = economyData[data].content
  let person = economyData[data].mentions.users.first()
  let amount = content.split('amount:')
  client.channels.get('547751546754957312').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
-   }
+   }*/
 client.on('message', message => {
     if (message.author.bot || !message.guild) return;
 
