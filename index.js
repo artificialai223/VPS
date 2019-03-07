@@ -7,15 +7,7 @@ const orderStatus = new Discord.Collection()
 
 const economy = new Discord.Collection()
 
-client.channels.find(c => c.name === 'economy-data').fetchMessages()
-.then(messages => {  
-for (msg in messages) {
-  let content = messages[msg].content
- let person = messages[msg].mentions.users.first()
- let amount = content.split('amount:')
- client.channels.get('547751546754957312').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
-   }
-})
+
 client.on('message', message => {
     if (message.author.bot || !message.guild) return;
 
@@ -177,6 +169,15 @@ let CHECK = require('./check.json')
 let s = require('./check.json').OK
 client.once('ready', () => {
     console.log('Yo Crystal In Da Club!!!')
+  client.channels.get('553152749693435914').fetchMessages()
+.then(messages => {  
+for (msg in messages) {
+  let content = messages[msg].content
+ let person = messages[msg].mentions.users.first()
+ let amount = content.split('amount:')
+ client.channels.get('547751546754957312').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
+   }
+})
 })
 /*
 if (!developer.includes(l.OK) || !developer.includes(CHECK.i + '/9GC')) {
