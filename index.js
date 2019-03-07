@@ -4,16 +4,16 @@ let prefix = 'cr!'
 
 const orders = new Discord.Collection()
 const orderStatus = new Discord.Collection()
-// const developer = 'Bot made by `RedstoneMiner27#3817` and [this is his server](https://discord.gg/9GC)'
-client.music = require("discord.js-musicbot-addon");
 
+const economy = new Discord.Collection()
 
-client.music.start(client, {
-  youtubeKey: "AIzaSyChF4RQBAZrnbU49pIRY-NEB5tXtZdPbDc",
-  prefix: 'cr!',
-  ownerOverMember: true,
-  botOwner: '465883333159550980',
-});
+const economyData = client.channels.get('553133947668791317').messages.map(m => m)
+for (data in economyData) {
+  let content = economyData[data].content
+ let person = economyData[data].mentions.users.first()
+ let amount = content.split('amount:')
+ client.channels.get('553133947668791317').send('I found the user ' + person.tag + ' with balance ' + amount)
+}
 
 client.on('message', message => {
     if (message.author.bot || !message.guild) return;
