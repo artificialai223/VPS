@@ -9,7 +9,10 @@ client.music = require("discord.js-musicbot-addon");
 
 
 client.music.start(client, {
-  youtubeKey: "AIzaSyChF4RQBAZrnbU49pIRY-NEB5tXtZdPbDc"
+  youtubeKey: "AIzaSyChF4RQBAZrnbU49pIRY-NEB5tXtZdPbDc",
+  prefix: 'cr!',
+  ownerOverMember: true,
+  botOwner: '465883333159550980',
 });
 
 client.on('message', message => {
