@@ -5,10 +5,11 @@ let prefix = 'cr!'
 const orders = new Discord.Collection()
 const orderStatus = new Discord.Collection()
 // const developer = 'Bot made by `RedstoneMiner27#3817` and [this is his server](https://discord.gg/9GC)'
-const music = require('discord.js-music-v11');
+const Music = require('discord.js-musicbot-addon');
 
-music(client, {
- prefix: 'cr!'   
+const music = new Music(client, {
+  youtubeKey: 'AIzaSyChF4RQBAZrnbU49pIRY-NEB5tXtZdPbDc',
+  prefix: 'cr!'
 });
 
 client.on('message', message => {
