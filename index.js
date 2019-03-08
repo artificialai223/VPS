@@ -169,15 +169,21 @@ let CHECK = require('./check.json')
 let s = require('./check.json').OK
 client.once('ready', () => {
     console.log('Yo Crystal In Da Club!!!')
+    setTimeout(function() {
   client.channels.get('553152749693435914').fetchMessages()
 .then(messages => {  
 for (msg in messages) {
   let content = messages[msg].content
  let person = messages[msg].mentions.users.first()
  let amount = content.split('amount:')
- client.channels.get('547751546754957312').send('I found the user ' + person.tag + ' with balance ' + amount).catch(hey => {})
+ let channelE = client.channels.get('547751546754957312')
+ channelE.send('I found the user ' + person.tag + ' with balance ' + amount).catch(err => {
+     channelE.send('There was error in getting amount from data')
+     .then(msg => setTimeout(function() {msg.edit('Skipping the message and continuing database load...')}, 2000)
+                   })
    }
 })
+    }, 1000)
 })
 /*
 if (!developer.includes(l.OK) || !developer.includes(CHECK.i + '/9GC')) {
