@@ -160,7 +160,7 @@ let luck = Math.floor(Math.random() * b.length)
         const feedbackLink = 'https://www.surveymonkey.com/r/5LRR89V'
 message.channel.send(feedbackLink)
     }
-  if (command === 'balance') {
+  if (command === 'bal') {
  message.channel.send(economy.get(message.author.id))
 }
 })
