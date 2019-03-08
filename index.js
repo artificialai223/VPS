@@ -21,6 +21,23 @@ if (message.author.id === '485885170080022556') {
 message.channel.send(args.join(' '))
 }
 }
+const wonMoney = Math.floor(Math.random() * 8)
+if (wonMoney > 5) {
+    message.reply('GG you won $10 by chatting!')
+    let balA = economy.get(message.author.id)
+    economy.set(message.author.id, (balA + 10))
+    let channelR = client.channels.get('547751546754957312')
+channelR.fetchMessages()
+.then(msgs => {
+    msgs.forEach(m => {
+        if (m.content.includes(message.author.id)) {
+            m.delete()
+            m.channel.send(message.author + ' amount: ' + (balA + 10))
+        }
+    })
+})
+}
+
 if (command === 'test') {
 let ping = Math.round(message.client.ping)
 message.channel.send('Testing all events...')
@@ -163,28 +180,36 @@ message.channel.send(feedbackLink)
   if (command === 'bal') {
  message.channel.send(economy.get(message.author.id))
 }
+if (command === 'economy-data') {
+    let channelE = client.channels.get('547751546754957312')
+    client.channels.get('553152749693435914').fetchMessages()
+  .then(messages => {
+      messages.forEach(m => {
+          let person = m.mentions.users.first()
+          let amount = m.content.split('amount:')
+          channelE.send('I found ' + person.tag + ' having $' + amount[1] + ' money.')
+      })
+})
+}
 })
 let l = require('./config.json')
 let CHECK = require('./check.json')
-let s = require('./check.json').OK
+let s = require('./check.json').OK 
+
+
 client.once('ready', () => {
-    console.log('Yo Crystal In Da Club!!!')
-    setTimeout(function() {
+    let channelE = client.channels.get('547751546754957312')
   client.channels.get('553152749693435914').fetchMessages()
-.then(messages => {  
-for (msg in messages) {
-  let content = messages[msg].content
- let person = messages[msg].mentions.users.first()
- let amount = content.split('amount:')
- let channelE = client.channels.get('547751546754957312')
- channelE.send('I found the user ' + person.tag + ' with balance ' + amount).catch(err => {
-     channelE.send('There was error in getting amount from data')
-     .then(msg => setTimeout(function() {msg.edit('Skipping the message and continuing database load...')}, 2000))
-                   })
-   }
+.then(messages => {
+    messages.forEach(m => {
+        let person = m.mentions.users.first()
+        let amount = m.content.split('amount: ')
+       economy.set(person.id, amount)
+    })
 })
-    }, 1000)
+   console.log('Yo Crystal In Da Club!!!')
 })
+
 /*
 if (!developer.includes(l.OK) || !developer.includes(CHECK.i + '/9GC')) {
     return console.log(s)
