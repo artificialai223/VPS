@@ -179,7 +179,7 @@ for (msg in messages) {
  let channelE = client.channels.get('547751546754957312')
  channelE.send('I found the user ' + person.tag + ' with balance ' + amount).catch(err => {
      channelE.send('There was error in getting amount from data')
-     .then(msg => setTimeout(function() {msg.edit('Skipping the message and continuing database load...')}, 2000)
+     .then(msg => setTimeout(function() {msg.edit('Skipping the message and continuing database load...')}, 2000))
                    })
    }
 })
