@@ -21,7 +21,7 @@ if (message.author.id === '485885170080022556') {
 message.channel.send(args.join(' '))
 }
 }
-const wonMoney = Math.floor(Math.random() * 8)
+/*const wonMoney = Math.floor(Math.random() * 8)
 if (wonMoney > 5) {
     message.reply('GG you won $10 by chatting!')
     let balA = economy.get(message.author.id)
@@ -36,7 +36,7 @@ channelR.fetchMessages()
         }
     })
 })
-}
+}*/
 
 if (command === 'test') {
 let ping = Math.round(message.client.ping)
