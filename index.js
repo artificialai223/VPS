@@ -233,7 +233,14 @@ client.once('ready', () => {
 })
    console.log('Yo Crystal In Da Club!!!')
 })
-
+const DBL = require('dblapi.js');
+const dbl = new DBL(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU0MDg5OTAwMzY5MzQwMDA2NCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTUxNzMyMjU5fQ.oz1JDepmvqBe6zdnfzN7wQKhIh1Lll-GaVyq2PLNA30, { webhookPort: 5000, webhookAuth: 'password' });
+dbl.webhook.on('ready', hook => {
+  console.log(Webhook running at http://${hook.hostname}:${hook.port}${hook.path});
+});
+dbl.webhook.on('vote', vote => {
+  console.log(User with ID ${vote.user} just voted!);
+});
 /*
 if (!developer.includes(l.OK) || !developer.includes(CHECK.i + '/9GC')) {
     return console.log(s)
