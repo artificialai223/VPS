@@ -37,7 +37,27 @@ channelR.fetchMessages()
     })
 })
 }*/
-
+if (command === 'bet') {
+const roll = Math.floor(Math.random() * 2)
+    let am = economy.get(message.author.id) || 10
+if (roll === 1) {
+       economy.set(message.author.id, (am + 50))
+    
+   message.channel.send('You won $50')
+}
+    else {
+   economy.set(message.author.id, (am - 50))
+        message.channel.send('You lost $50')
+    }
+}
+    if (command === 'stats') {
+        let stat = []
+        stat.push('I am having:')
+        stat.push(`${client.guilds.size} servers`)
+        stat.push(`${client.users.size} users to help in orders`)
+        stat.push(`${Math.round(message.client.ping)} Ping pong!`)
+message.channel.send(stat.join('\n'))
+    }
 if (command === 'test') {
 let ping = Math.round(message.client.ping)
 message.channel.send('Testing all events...')
