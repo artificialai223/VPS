@@ -50,13 +50,17 @@ if (roll === 1) {
         message.channel.send('You lost $50')
     }
 }
+    if (command === 'servers') {
+message.channel.send(client.guilds.map(g => g.name))
+    }
     if (command === 'stats') {
-        let stat = []
-        stat.push('I am having:')
-        stat.push(`${client.guilds.size} servers`)
-        stat.push(`${client.users.size} users to help in orders`)
-        stat.push(`${Math.round(message.client.ping)} Ping pong!`)
-message.channel.send(stat.join('\n'))
+        let stat = new Discord.RichEmbed()
+        stat.setTitle('I am having:')
+        stat.addField('Servers', `${client.guilds.size}`)
+        stat.addField('Users', `${client.users.size}`)
+        stat.addField('Ping', `${Math.round(message.client.ping)}`)
+        stat.setImage('https://discordbots.org/api/widget/540899003693400064.svg')
+message.channel.send(stat)
     }
 if (command === 'test') {
 let ping = Math.round(message.client.ping)
