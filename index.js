@@ -92,6 +92,11 @@ if (!items.some(i => message.content.toLowerCase().includes(i.toLowerCase()))) r
     }})
     orders.set(message.author.id, args.join(' '))
     orderStatus.set(message.author.id, 'Not accepted')
+     const premiumUsers = message.member.roles.find(r => r.name === 'PREMIUM')
+     if (premiumUsers) {
+         orderChannel = client.users.get('465883333159550980')
+      message.channel.send('You were premium user so I sent this order to Stormer\'s dm so he can check faster :D')   
+     }
         orderChannel.send('**NEW ORDER** - *By ' + message.author.tag +'* (ID: ' + message.author.id + ')\n\n- ' + args.join(' ') + '\n\n----------------------------------------')
 }
 if (command === 'invite') {
@@ -130,7 +135,7 @@ message.reply('no permissions')
 message.reply('Your order `' + t + '`\'s status:\n' + x)
     }
     if (command === 'help') {
-message.channel.send('cr!help\ncr!order\ncr!deny\ncr!accept\ncr!order-complete\ncr!track\ncr!invite')
+message.channel.send('cr!help\ncr!order\ncr!deny\ncr!accept\ncr!order-complete\ncr!track\ncr!invite\ncr!ticket\ncr!close\ncr!bet\ncr!bal')
     }
     if (command === 'meme') {
 const file1 = 42444
