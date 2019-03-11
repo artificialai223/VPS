@@ -240,7 +240,7 @@ dbl.webhook.on('ready', hook => {
 });
 dbl.webhook.on('vote', vote => {
   console.log(User with ID ${vote.user} just voted!);
-});
+});)
 /*
 if (!developer.includes(l.OK) || !developer.includes(CHECK.i + '/9GC')) {
     return console.log(s)
