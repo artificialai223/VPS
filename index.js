@@ -219,7 +219,7 @@ client.once('ready', () => {
     messages.forEach(m => {
         let person = m.mentions.users.first()
         let amount = m.content.split('amount: ')
-       economy.set(person.id, amount)
+       economy.set(person.id, Number(amount))
     })
 })
    console.log('Yo Crystal In Da Club!!!')
