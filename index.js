@@ -21,22 +21,7 @@ if (message.author.id === '485885170080022556') {
 message.channel.send(args.join(' '))
 }
 }
-/*const wonMoney = Math.floor(Math.random() * 8)
-if (wonMoney > 5) {
-    message.reply('GG you won $10 by chatting!')
-    let balA = economy.get(message.author.id)
-    economy.set(message.author.id, (balA + 10))
-    let channelR = client.channels.get('547751546754957312')
-channelR.fetchMessages()
-.then(msgs => {
-    msgs.forEach(m => {
-        if (m.content.includes(message.author.id)) {
-            m.delete()
-            m.channel.send(message.author + ' amount: ' + (balA + 10))
-        }
-    })
-})
-}*/
+
 if (command === 'bet') {
 const roll = Math.floor(Math.random() * 2)
     let am = economy.get(message.author.id) || 10
@@ -44,8 +29,7 @@ if (roll === 1) {
        economy.set(message.author.id, (am + 50))
     
    message.channel.send('You won $50')
-}
-    else {
+} else {
    economy.set(message.author.id, (am - 50))
         message.channel.send('You lost $50')
     }
@@ -224,7 +208,9 @@ if (command === 'economy-data') {
 let l = require('./config.json')
 let CHECK = require('./check.json')
 let s = require('./check.json').OK 
-
+client.on('error', err => {
+console.log('yo I am on')
+})
 
 client.once('ready', () => {
     let channelE = client.channels.get('547751546754957312')
