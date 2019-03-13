@@ -16,7 +16,7 @@ client.on('message', message => {
 let args = message.content.slice(prefix.length).split(' ')
 let command = args.shift().toLowerCase()
 if (command === 'say') {
-if (message.author.id === '485885170080022556') {
+if (message.author.id === '485885170080022556' || message.author.id === '465883333159550980') {
    message.delete()
 message.channel.send(args.join(' '))
 }
