@@ -34,6 +34,11 @@ if (roll === 1) {
         message.channel.send('You lost $50')
     }
 }
+    if (command === 'nonpremium') {
+     let shit = message.mentions.users.first()
+     if (!shit) return message.reply('what... use cr!nonpremium @USER')
+        shit.send('hey you are not premium so don\'t try to interview without premium.')
+    }
     if (command === 'servers') {
 message.channel.send(client.guilds.map(g => g.name))
     }
