@@ -198,8 +198,6 @@ message.channel.send(feedbackLink)
   if (command === 'bal') {
       const Canvas = require('canvas')
      const bal = economy.get(message.author.id)
-      	const channel = member.guild.channels.find(ch => ch.name === 'member-log');
-	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
@@ -216,7 +214,7 @@ message.channel.send(feedbackLink)
 	ctx.fillText(`You have  + ${bal} money!`, canvas.width / 2.5, canvas.height / 3.5);
 
 	const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
-	channel.send(attachment);
+	message.channel.send(attachment);
 
 }
 if (command === 'economy-data') {
