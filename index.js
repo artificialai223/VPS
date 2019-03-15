@@ -198,21 +198,15 @@ message.channel.send(feedbackLink)
   if (command === 'bal') {
       const Canvas = require('canvas')
      const bal = economy.get(message.author.id)
-
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
-
 	const background = await Canvas.loadImage('./wallpaper.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-
-	// Slightly smaller text placed above the member's display name
 	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`You have  + ${bal} money!`, canvas.width / 2.5, canvas.height / 3.5);
-
 	const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
 	message.channel.send(attachment);
 
