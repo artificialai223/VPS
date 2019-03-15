@@ -44,7 +44,7 @@ message.channel.send(client.guilds.map(g => g.name))
     }
     if (command === 'stats') {
         let stat = new Discord.RichEmbed()
-        stat.setTitle('I am having:')
+        stat.setTitle('I Am Having:')
         stat.addField('Servers', `${client.guilds.size}`)
         stat.addField('Users', `${client.users.size}`)
         stat.addField('Ping', `${Math.round(message.client.ping)}`)
@@ -240,7 +240,7 @@ client.once('ready', () => {
        economy.set(person.id, Number(amount))
     })
 })
-   console.log('Yo Crystal In Da Club!!!')
+   console.log('Crystal Is Online If Errors Happen Contact RedstoneMiner27! Tell Him The Error(s)')
 })
 
 /*
