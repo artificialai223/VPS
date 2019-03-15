@@ -8,7 +8,7 @@ const orderStatus = new Discord.Collection()
 const economy = new Discord.Collection()
 
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.author.bot || !message.guild) return;
 
     if (!message.content.startsWith(prefix)) return;
