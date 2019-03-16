@@ -207,7 +207,7 @@ message.channel.send(feedbackLink)
 	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`You have  + ${bal} money!`, canvas.width / 2.5, canvas.height / 3.5);
-	const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
+	const attachment = new Discord.Attachment(canvas.toBuffer(), 'balance.png');
 	message.channel.send(attachment);
 
 }
