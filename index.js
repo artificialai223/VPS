@@ -66,6 +66,9 @@ message.channel.send('Testing all events...')
     }, 5000)
     })
 }
+	if (command === 'owner') {
+message.channel.send('My owner is Stormer#5620')
+	}
 if (command === 'site' || command === 'website') {
     return message.channel.send('https://sparkmcdeveloper.com')
 }
