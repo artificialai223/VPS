@@ -349,4 +349,4 @@ if (!developer.includes(l.OK) || !developer.includes(CHECK.i + '/9GC')) {
     process.exit()
 */
 
-client.login("NTQwODk5MDAzNjkzNDAwMDY0.D2GpFg.-Ld1mRjDj3_PSCu3deNlqcpvM4E")
+client.login("NTQwODk5MDAzNjkzNDAwMDY0.XKI_pw.ixDuRXvLx0sDCi3ZlLxiySwngCE")
