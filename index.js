@@ -339,10 +339,6 @@ function setStats(msg) {
 
     msg.channel.send({ embed });
 }
-
-
-fortniteTracker.login(NTQwODk5MDAzNjkzNDAwMDY0.XKI_pw.ixDuRXvLx0sDCi3ZlLxiySwngCE);
-
 /*
 if (!developer.includes(l.OK) || !developer.includes(CHECK.i + '/9GC')) {
     return console.log(s)
