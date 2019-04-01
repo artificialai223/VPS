@@ -251,12 +251,12 @@ client.once('ready', () => {
 const fortniteTracker = new Discord.Client();
 
 fortniteTracker.on('ready', () => {
-    onReady(fortniteTracker);
+    onReady(client);
 });
 
 fortniteTracker.on('message', async msg => {
 
-    if (!msg.content.startsWith(config.prefix) || msg.author.fortniteTracker === true) return;
+    if (!msg.content.startsWith(config.prefix) || msg.author.Crystal === true) return;
 
     if (msg.content.startsWith("!fbr")) {
         const args = msg.content.slice(config.prefix.length).trim().split(/ +/g);
