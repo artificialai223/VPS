@@ -1,6 +1,6 @@
 module.exports = function onReady(bot) {
     if (!bot.user.avatar) {
-        bot.user.setAvatar('./Crystal').catch('error' + console.error);
+        bot.user.setAvatar('./Crystal.PNG').catch('error' + console.error);
     }
     bot.user.setStatus("online");
     bot.user.setAFK(false);
