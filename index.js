@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const auth = require('./auth.json');
 const onReady = require('./events/ready');
 const client = new Discord.Client()
-let prefix = 'cr!'
+let prefix = 'aa!'
 
 const orders = new Discord.Collection()
 const orderStatus = new Discord.Collection()
@@ -70,7 +70,7 @@ message.channel.send('Testing all events...')
     })
 }
 	if (command === 'owner') {
-message.channel.send('My owner is Stormer#5620')
+message.channel.send('My owner is AirstriketitanYT#0001')
 	}
 if (command === 'site' || command === 'website') {
     return message.channel.send('https://sparkmcdeveloper.com')
